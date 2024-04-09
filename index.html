@@ -16,43 +16,81 @@
             margin: 0;
             padding: 0;
             color: #fff;
+            animation: gradientBG 10s ease infinite;
         }
-        .container {
-            padding: 20px;
-        }
-        h1 {
-            font-family: 'Pacifico', cursive;
-            font-size: 48px;
-            color: #ff0066;
-            margin-top: 50px;
-            animation: colorChange 2s infinite alternate;
-        }
-        @keyframes colorChange {
+
+        @keyframes gradientBG {
             0% {
-                color: #ff0066;
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
             }
             100% {
-                color: #6600cc;
+                background-position: 0% 50%;
             }
         }
+
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 72px;
+            color: #ff0066;
+            margin-top: 50px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
         p {
             color: #fff;
-            font-size: 18px;
+            font-size: 24px;
             margin-top: 20px;
         }
+
         video {
-            margin-top: 20px;
+            margin-top: 40px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
             max-width: 100%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Happy 366th Day!</h1>
-        <p>Celebrating our special day with this romantic video:</p>
-        <video width="640" height="360" controls>
+        <video width="640" height="360" controls autoplay>
             <source src="366th.mp4" type="video/mp4">
         </video>
         <p>Hi Love, HAPPY 366th days and counting... We're not a perfect couple, but I promise to fight for our love every day.!</p>
